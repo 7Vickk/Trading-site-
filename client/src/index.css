@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-bg-primary text-white font-sans antialiased;
+    background-color: #080c14;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card border border-gray-800/60 rounded-xl;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-500 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-bg-hover text-gray-400 hover:text-white font-medium px-4 py-2 rounded-lg transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply w-full bg-bg-secondary border border-gray-700 focus:border-blue-500 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors duration-150;
+  }
+
+  .gain {
+    @apply text-green-400;
+  }
+
+  .loss {
+    @apply text-red-400;
+  }
+
+  .neutral {
+    @apply text-gray-400;
+  }
+}
+
+/* Animated gradient background for login */
+.gradient-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
+              #080c14;
+}
+
+/* Price flash animation */
+@keyframes flash-green {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(74, 222, 128, 0.12); }
+}
+
+@keyframes flash-red {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(248, 113, 113, 0.12); }
+}
+
+.flash-gain {
+  animation: flash-green 0.6s ease-in-out;
+}
+
+.flash-loss {
+  animation: flash-red 0.6s ease-in-out;
+}
+
+/* Notification slide in */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.notification-enter {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+.notification-exit {
+  animation: slide-out-right 0.3s ease-in forwards;
+}
+
+/* Pulse dot for live indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Smooth number transitions */
+.price-value {
+  transition: color 0.3s ease;
+}
