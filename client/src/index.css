@@ -3,131 +3,62 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-stone-800 font-sans antialiased; }
 
-  body {
-    @apply bg-bg-primary text-white font-sans antialiased;
-    background-color: #080c14;
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gray-700 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500;
-  }
+  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 leading-tight; }
+  h2 { @apply text-2xl sm:text-3xl font-bold text-primary-900 leading-snug; }
+  h3 { @apply text-xl font-semibold text-primary-800; }
 }
 
 @layer components {
-  .card {
-    @apply bg-bg-card border border-gray-800/60 rounded-xl;
-  }
-
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-500 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800
+           text-white font-semibold px-6 py-3 rounded-lg transition-colors
+           duration-200 shadow-sm hover:shadow-md;
   }
-
-  .btn-ghost {
-    @apply bg-transparent hover:bg-bg-hover text-gray-400 hover:text-white font-medium px-4 py-2 rounded-lg transition-colors duration-150;
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary-700
+           text-primary-700 hover:bg-primary-700 hover:text-white
+           font-semibold px-6 py-3 rounded-lg transition-colors duration-200;
   }
-
-  .input-field {
-    @apply w-full bg-bg-secondary border border-gray-700 focus:border-blue-500 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors duration-150;
+  .btn-call {
+    @apply inline-flex items-center gap-2 bg-green-500 hover:bg-green-600
+           text-white font-bold px-6 py-3 rounded-lg transition-colors
+           duration-200 shadow-md;
   }
-
-  .gain {
-    @apply text-green-400;
+  .section { @apply py-16 lg:py-24; }
+  .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow
+           duration-300 overflow-hidden;
   }
-
-  .loss {
-    @apply text-red-400;
-  }
-
-  .neutral {
-    @apply text-gray-400;
-  }
-}
-
-/* Animated gradient background for login */
-.gradient-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 60%),
-              #080c14;
-}
-
-/* Price flash animation */
-@keyframes flash-green {
-  0%, 100% { background-color: transparent; }
-  50% { background-color: rgba(74, 222, 128, 0.12); }
-}
-
-@keyframes flash-red {
-  0%, 100% { background-color: transparent; }
-  50% { background-color: rgba(248, 113, 113, 0.12); }
-}
-
-.flash-gain {
-  animation: flash-green 0.6s ease-in-out;
-}
-
-.flash-loss {
-  animation: flash-red 0.6s ease-in-out;
-}
-
-/* Notification slide in */
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  .badge {
+    @apply inline-block bg-primary-100 text-primary-800 text-xs font-semibold
+           px-3 py-1 rounded-full uppercase tracking-wide;
   }
 }
 
-@keyframes slide-out-right {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+/* Underline animation for nav links */
+.nav-link {
+  @apply relative text-stone-700 hover:text-primary-700 font-medium transition-colors duration-150;
+}
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-primary-600 transition-all duration-200;
+}
+.nav-link:hover::after,
+.nav-link.active::after { @apply w-full; }
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 83, 45, 0.82) 0%,
+    rgba(21, 128, 61, 0.65) 50%,
+    rgba(22, 101, 52, 0.70) 100%
+  );
 }
 
-.notification-enter {
-  animation: slide-in-right 0.3s ease-out forwards;
-}
-
-.notification-exit {
-  animation: slide-out-right 0.3s ease-in forwards;
-}
-
-/* Pulse dot for live indicator */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-.pulse-dot {
-  animation: pulse-dot 1.5s ease-in-out infinite;
-}
-
-/* Smooth number transitions */
-.price-value {
-  transition: color 0.3s ease;
-}
+/* Leafy divider */
+.wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }

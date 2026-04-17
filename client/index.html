@@ -2,12 +2,93 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TR Dashboard — Trading en temps réel</title>
+    <meta name="theme-color" content="#166534" />
+
+    <!-- SEO default (overridden per page via JS) -->
+    <title>MAZEAS Paysages — Paysagiste Nantes, Loire-Atlantique, Vendée</title>
+    <meta name="description" content="MAZEAS Paysages, paysagiste professionnel à Nantes et périphérie, Loire-Atlantique et nord Vendée. Clôtures, terrasses, jardins, entretien. Devis gratuit. Crédit d'impôt 50%." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mazeaspaysages.fr/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="MAZEAS Paysages" />
+    <meta property="og:title" content="MAZEAS Paysages — Paysagiste Nantes &amp; Loire-Atlantique" />
+    <meta property="og:description" content="Paysagiste professionnel à Nantes et périphérie. Clôtures, terrasses, jardins, entretien espaces verts. Devis gratuit." />
+    <meta property="og:image" content="https://mazeaspaysages.fr/og-image.jpg" />
+    <meta property="og:url" content="https://mazeaspaysages.fr/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://mazeaspaysages.fr/#business",
+      "name": "MAZEAS Paysages",
+      "alternateName": "Mazeas Paysages",
+      "description": "Paysagiste professionnel à Nantes et périphérie, Loire-Atlantique et nord Vendée. Création et entretien de jardins, clôtures, terrasses, gazon synthétique, maçonnerie paysagère, constructions bois.",
+      "url": "https://mazeaspaysages.fr",
+      "telephone": "+33633463737",
+      "email": "mazeaspaysage@orange.fr",
+      "image": "https://mazeaspaysages.fr/og-image.jpg",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7 chemin du bois clair, Lieu-dit Les Étangs",
+        "addressLocality": "La Limouzinière",
+        "postalCode": "44310",
+        "addressRegion": "Loire-Atlantique",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "46.9524",
+        "longitude": "-1.6647"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Nantes"},
+        {"@type": "AdministrativeArea", "name": "Loire-Atlantique"},
+        {"@type": "AdministrativeArea", "name": "Vendée"},
+        {"@type": "City", "name": "Saint-Philbert-de-Grand-Lieu"},
+        {"@type": "City", "name": "La Limouzinière"}
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services paysagers",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Clôtures et portails"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Terrasses et dallage"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gazon synthétique"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maçonnerie paysagère"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Constructions bois"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Création de jardins"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entretien espaces verts"}}
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/mazeaspaysages/",
+        "https://www.facebook.com/mazeaspaysages/"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
