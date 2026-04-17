@@ -1,5 +1,4 @@
 {
-  "comment": "Root Directory must be set to 'client/' in the Vercel dashboard. The active vercel.json is client/vercel.json.",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
