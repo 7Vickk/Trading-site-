@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-stone-800 font-sans antialiased; }
+
+  h1 { @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 leading-tight; }
+  h2 { @apply text-2xl sm:text-3xl font-bold text-primary-900 leading-snug; }
+  h3 { @apply text-xl font-semibold text-primary-800; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800
+           text-white font-semibold px-6 py-3 rounded-lg transition-colors
+           duration-200 shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary-700
+           text-primary-700 hover:bg-primary-700 hover:text-white
+           font-semibold px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+  .btn-call {
+    @apply inline-flex items-center gap-2 bg-green-500 hover:bg-green-600
+           text-white font-bold px-6 py-3 rounded-lg transition-colors
+           duration-200 shadow-md;
+  }
+  .section { @apply py-16 lg:py-24; }
+  .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow
+           duration-300 overflow-hidden;
+  }
+  .badge {
+    @apply inline-block bg-primary-100 text-primary-800 text-xs font-semibold
+           px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+}
+
+/* Underline animation for nav links */
+.nav-link {
+  @apply relative text-stone-700 hover:text-primary-700 font-medium transition-colors duration-150;
+}
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-primary-600 transition-all duration-200;
+}
+.nav-link:hover::after,
+.nav-link.active::after { @apply w-full; }
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 83, 45, 0.82) 0%,
+    rgba(21, 128, 61, 0.65) 50%,
+    rgba(22, 101, 52, 0.70) 100%
+  );
+}
+
+/* Leafy divider */
+.wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }
